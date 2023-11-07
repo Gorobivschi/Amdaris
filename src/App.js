@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import {UserProvider} from "./UserContext"
 function App() {
  
 return ( 
-  
+  <UserProvider>
   <div>
   <header>
       <title>STEAM on WHEELS</title>
@@ -35,6 +36,7 @@ return (
 <br></br>
   </div>
   </div>
+  </UserProvider>
   )
    
 

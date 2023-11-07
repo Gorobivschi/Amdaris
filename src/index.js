@@ -11,6 +11,7 @@ import {
 import ExplorePage from './Pages/ExplorePage';
 import ContactsPage from './Pages/ContactsPage';
 import MorePage from './Pages/Morepage';
+import Login from './Pages/LoginPage';
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
   {
     path: "/more",
     element: <MorePage/>,
+  },
+  {
+    path: "/login",
+    element: <Login/>,
   },
 ]);
 
