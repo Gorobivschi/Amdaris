@@ -1,15 +1,13 @@
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import { auth } from "../firebase"
 import { useUser, useUserDispatch } from "../UserContext";
 
-function Login() {
+function LoginPage() {
     const provider = new GoogleAuthProvider();
-    // const [user, setUser] = useState<any>(null);
     const user = useUser();
     const dispatch = useUserDispatch();
 
     function signTheUserIn() {
-       console.log(dispatch)
         signInWithPopup(auth, provider)
             .then((result) => {
                 // This gives you a Google Access Token. You can use it to access the Google API.
@@ -17,7 +15,6 @@ function Login() {
                 const token = credential?.accessToken;
                 // The signed-in user info.
                 const user = result.user
-                debugger;
                 dispatch({ user: user, action: "added" });
                 // IdP data available using getAdditionalUserInfo(result)
                 // ...
@@ -39,9 +36,15 @@ function Login() {
         Salut, apasa aici ca sa intri
         <button onClick={signTheUserIn}>log me innnn</button>
         {user && (
-            <>Salut {JSON.stringify(user)}</>
+            <>Salut {JSON.stringify(user)}
+            <button onClick={() => {
+                signOut(auth).then((result) => {
+                    window.location.reload()
+                })
+            }}>Log me out</button>
+            </>
         )}
     </>)
 }
 
-export default Login;
+export default LoginPage;
