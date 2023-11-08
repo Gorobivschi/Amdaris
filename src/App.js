@@ -14,6 +14,7 @@ function App() {
             <Link to="/about">About</Link>
             <Link to="/explore">Explore</Link>
             <Link to="/contacts">Contacts</Link>
+            <Link to="/login">Login</Link>
           </navbar>
         </header>
         <main>

@@ -32,19 +32,30 @@ function LoginPage() {
     }
 
 
-    return (<>
-        Salut, apasa aici ca sa intri
-        <button onClick={signTheUserIn}>log me innnn</button>
+    return (
+    <div>
+        <div>
+    <link rel="stylesheet" href="./logstyle.css"></link>
+    
+    <title>Logare</title>
+        </div>
+
+    <div id="index"></div>
+    <div class="container">
+        <h2>Loghează-te cu Google</h2>
+    
+        <button class="btn-login" onClick={signTheUserIn}>Log in</button>
         {user && (
-            <>Salut {JSON.stringify(user)}
-            <button onClick={() => {
+            <div> {JSON.stringify(user)}
+            <button class="btn-login" onClick={() => {
                 signOut(auth).then((result) => {
                     window.location.reload()
                 })
-            }}>Log me out</button>
-            </>
+            }} >Log out</button>
+            </div>
         )}
-    </>)
+    </div>
+    </div>)
 }
 
 export default LoginPage;
