@@ -11,39 +11,43 @@ import {
 import ExplorePage from './Pages/ExplorePage';
 import ContactsPage from './Pages/ContactsPage';
 import MorePage from './Pages/Morepage';
-import Login from './Pages/LoginPage';
+import LoginPage from './Pages/LoginPage';
+import { UserProvider } from "./UserContext"
+
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <App />,
   },
   {
     path: "/about",
-    element: <AboutPage/>,
+    element: <AboutPage />,
   },
   {
     path: "/explore",
-    element: <ExplorePage/>,
+    element: <ExplorePage />,
   },
   {
     path: "/contacts",
-    element: <ContactsPage/>,
+    element: <ContactsPage />,
   },
   {
     path: "/more",
-    element: <MorePage/>,
+    element: <MorePage />,
   },
   {
     path: "/login",
-    element: <Login/>,
+    element: <LoginPage />,
   },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <UserProvider>
+      <RouterProvider router={router} />
+    </UserProvider>
   </React.StrictMode>
 );
 
