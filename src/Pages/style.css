@@ -77,7 +77,7 @@ navbar a:hover {
 
 }
 #index {
-   background:linear-gradient(#0000006e,#00000055),url("../images/index.png");
+   /* background:linear-gradient(#0000006e,#00000055),url("../images/index.png"); */
    background-size: cover;
   min-height:100vh;
   color: aliceblue;

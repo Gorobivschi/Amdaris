@@ -33,29 +33,24 @@ function LoginPage() {
 
 
     return (
-    <div>
-        <div>
-    <link rel="stylesheet" href="./logstyle.css"></link>
-    
-    <title>Logare</title>
-        </div>
-
-    <div id="index"></div>
-    <div class="container">
-        <h2>Loghează-te cu Google</h2>
-    
-        <button class="btn-login" onClick={signTheUserIn}>Log in</button>
-        {user && (
-            <div> {JSON.stringify(user)}
-            <button class="btn-login" onClick={() => {
-                signOut(auth).then((result) => {
-                    window.location.reload()
-                })
-            }} >Log out</button>
+        <div className="container-fluid bg-dark text-white">
+            <div className="">
+                <div className="">
+                    <h2>Loghează-te cu Google</h2>
+                    <button type="button" class="btn btn-light" onClick={signTheUserIn}>Log in
+                    </button>
+                    {user && (
+                        <div> {JSON.stringify(user)}
+                            <button className="btn-login" onClick={() => {
+                                signOut(auth).then((result) => {
+                                    window.location.reload()
+                                })
+                            }} >Log out</button>
+                        </div>
+                    )}
+                </div>
             </div>
-        )}
-    </div>
-    </div>)
+        </div>)
 }
 
 export default LoginPage;
