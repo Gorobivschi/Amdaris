@@ -17,6 +17,7 @@ function Morepage() {
                     <a href="/about">About</a>
                     <a href="/explore">Explore</a>
                     <a href="/contacts">Contacts</a>
+                    <a href="/login">Login</a>
                 </navbar>
                 <i id="hamburger" onclick="mobileMenu()" class="fa-solid fa-bars"></i>
             </header>

@@ -35,12 +35,12 @@ function LoginPage() {
     return (
         <div className="container-fluid bg-dark text-white">
             <div className="">
-                <div className="">
+                <div className="logare">
                     <h2>Loghează-te cu Google</h2>
                     <button type="button" class="btn btn-light" onClick={signTheUserIn}>Log in
                     </button>
                     {user && (
-                        <div> {JSON.stringify(user)}
+                        <div> 
                             <button className="btn-login" onClick={() => {
                                 signOut(auth).then((result) => {
                                     window.location.reload()
